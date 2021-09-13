@@ -101,8 +101,52 @@ function getBrojevi(int $stupci, int $redovi, int $zeljeniBroj, array $brojevi) 
     $minStupac = 0;
     $maxStupac = $stupci - 1;
     $minRed = 0;
-    $minRed = $redovi - 1;
+    $maxRed = $redovi - 1;
     $trenutniBroj = 1;
 
-    while
+    while ($trenutniBroj <= $zeljeniBroj)
+    {
+        for ($j = $maxRed; $j >= $minRed; $j--)
+        {
+            if ($j != $minRed)
+            {
+                $brojevi[$maxStupac][$j] = new SadrzajMatrice($trenutniBroj++, 3);
+            }
+            else
+            {
+                $brojevi[$maxStupac][$j] = new SadrzajMatrice($trenutniBroj++, 0);
+            }
+            if ($trenutniBroj > $zeljeniBroj)
+            {
+                return $brojevi;
+            }
+        }
+        $maxStupac--;
+
+
+        for ($i = $minStupac; $i >= $minStupac; $i--)
+        {
+            if ($i != $minStupac)
+            {
+                $brojevi[$i][$minRed] = new SadrzajMatrice($trenutniBroj++, 0);            
+            }
+            else
+            {
+                $brojevi[$i][$minRed] = new SadrzajMatrice($trenutniBroj++, 1);
+            }
+            if ($trenutniBroj > $zeljeniBroj)
+            {
+                return $brojevi;
+            } 
+        }
+        $minRed++;
+
+        for ($j = $minRed; $j <= $maxRed; $j++)
+        {
+            if ($j != $maxRed)
+            {
+                
+            }
+        }
+    }
 }
