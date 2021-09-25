@@ -1,4 +1,5 @@
 <?php
+
     main();
 class MatricaSadrzaj
 {
@@ -145,8 +146,70 @@ function getBrojevi(int $stupci, int $redovi, int $zeljeniBroj, array $brojevi) 
         {
             if ($j != $maxRed)
             {
-                
+                $brojevi[$minStupac[$j]] = new = MatricaSadrzaj($trenutniBroj++,1)
+            }
+            else
+            {
+                $brojevi[$minStupac[$j]] = new = MatricaSadrzaj($trenutniBroj++,2)
+            }
+            if ($trenutniBroj > $zeljeniBroj)
+            {
+                return $brojevi
             }
         }
+        $minStupac++;
+
+        for ($i =$minStupac; $i <= $maxStupac; $i++)
+        {
+            if ($i != $maxStupac)
+            {
+                $brojevi[$i][$maxRed] = new SadrzajMatrice($trenutniBroj++,2)
+            }
+            else 
+            {
+                $brojevi[$i][$maxRed] = new SadrzajMatrice($trenutniBroj++,3)
+            }
+            if ($trenutniBroj > $zeljeniBroj)
+            {
+                return $brojevi
+            }
+        }
+        $maxRed--;
+
     }
+    return $brojevi
 }
+
+function generirajCeliju(SadrzajMatrice $sadrzaj, bool $konacan) : string
+{
+    $pocetak = "<div class=\"SadrzajMatrice\">";
+    $kraj = "</div>";
+    $strelica = '';
+    $strelicaKlasa = ''; 
+    if($konacan)
+    {
+        return $pocetak . $sadrzaj->getBroj() . $kraj;
+    }
+    switch ($sadrzaj->getSmijer())
+    {
+        case 0: $strelica = '↑';
+                    $strelicaKlasa = 'strelicaGore';
+                    break;
+        case 1: $strelica = '→';
+                    $strelicaKlasa = 'strelicaLijevo';
+                    break;
+        case 2: $strelica = '↓';
+                    $strelicaKlasa = 'strelicaDolje';
+                    break;
+        case 3: $strelica = '←';
+                    $strelicaKlasa = 'strelicaDesno';
+                    break;
+        default: $strelica = 'ups';
+                    break;
+    }
+    $strelicaKutijaPočetak = '<div class = "strelica ' . $strelicaKlasa . '">';
+
+    return $početak . $sadrzaj->getBroj() . $strelicaKutijaPočetak . $strelica . $kraj . $kraj;
+}
+
+?>
