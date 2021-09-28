@@ -13,11 +13,11 @@
             Spiralna Matrica u PHP-u
         </h1>
         <p id="objašnjenje">
-            Cilj ove vježbe je stvoriti aplikaciju koja će generirati spiralnu matricu. <br/>
+              Cilj ove vježbe je stvoriti aplikaciju koja će generirati spiralnu matricu. <br/>
               Spiralna matrica ima ulaz od dva broja. Brojevi određuju širinu i visinu matrice. <br/>
-              Aplikacija će, klikom na "Generiraj matricu", stvoriti spiralnu matricu koja počinje u donjem desnom kutu. <br/>
+              Aplikacija će, klikom na "Generiraj matricu", stvoriti spiralnu matricu. <br/>
               Matrica će ispuniti kvadrate brojevima od 1 do 'n' gdje je 'n' umnožak dva broja koja je dao korisnik. <br/>
-              Matrica će biti ispunjena na način sličan spirali.
+              Matrica će biti ispunjena na način sličan spirali. <br/>
         </p>
     </div>
 <div class="main">
